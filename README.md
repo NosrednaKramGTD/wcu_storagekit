@@ -1,6 +1,6 @@
 # storagekit
 
-A small, config-driven storage wrapper built on **fsspec**.
+A small, config-driven storage wrapper built on **fsspec**. The goal is to be able to pass around storage locations and change them out as needed without impacting the application. For example s4s_file can point to a local direcitory today, an s3 server tomorrow and a sftp server next week. The only change needed would bit in hte `storagekit.yaml` file. This is to make it easier to store files safe and security, expecially with the increases desire to have files in could services. Below covers the basic design. 
 
 - Your app always uses **explicit provider aliases** like `primary://path/to/file`.
 - A YAML config maps each provider alias to a backend `base_uri` like `s3://bucket/prefix`, `sftp://user@host/path`, or `file:///data`.

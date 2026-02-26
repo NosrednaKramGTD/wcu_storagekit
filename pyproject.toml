@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wcu_storagekit"
+version = "0.1.0"
+description = "Config-driven, explicit-provider wrapper over fsspec"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "dotenv>=0.9.9",
+  "fsspec>=2026.2.0",
+  "PyYAML>=6.0.1",
+]
+
+[project.optional-dependencies]
+s3 = ["s3fs>=2025.12.0"]
+sftp = ["fsspec[ssh]>=2026.2.0"]
+azure = ["adlfs>=2026.2.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "ruff>=0.15.4",
+]
