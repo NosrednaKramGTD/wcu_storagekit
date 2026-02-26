@@ -11,20 +11,20 @@ A small, config-driven storage wrapper built on **fsspec**. The goal is to be ab
 Base:
 
 ```bash
-pip install .
+uv add git+https://github.com/NosrednaKramGTD/wcu_storagekit.git
 ```
 
 With optional backends:
 
 ```bash
-pip install .[s3]
-pip install .[sftp]
-pip install .[azure]
+uv add git+https://github.com/NosrednaKramGTD/wcu_storagekit.git[s3]
+uv add git+https://github.com/NosrednaKramGTD/wcu_storagekit.git[sftp]
+uv add git+https://github.com/NosrednaKramGTD/wcu_storagekit.git[azure]
 ```
 
 ## Configure
 
-Create a YAML file (example in `examples/storagekit.yaml`) and set:
+Create a YAML file (example: `example_storagekit.yaml`) and set:
 
 ```bash
 export STORAGEKIT_CONFIG=/etc/storagekit.yaml
